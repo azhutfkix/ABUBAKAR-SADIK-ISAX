@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ABUBAKAR SADIK ISA | Portfolio</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+nav {
+    background: #333;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+nav a:hover {
+    color: yellow;
+}
+
+section {
+    padding: 40px;
+}
+
+.hero {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 60px 20px;
+}
+
+.hero img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.project {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 5px solid #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+button {
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+}
+
+.dark {
+    background: #111;
+    color: white;
+}
+</style>
+
+</head>
+
+<body id="pageBody">
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+</nav>
+<section id="home" class="hero">
+    <h1>ABUBAKAR SADIK ISA</h1> <!-- Profile Name -->
+    <p>Web Developer | Student | Tech Enthusiast</p>
+    <button onclick="toggleMode()">Toggle Dark Mode</button>
+</section>
+
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>My name is <b>Abubakar sadik isa</b>. I am passionate about web development and technology.</p>
+
+    <h3>Skills</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript (Basic)</li>
+    </ul>
+
+    <h3>Education</h3>
+    <p>BSc.software engineering</p>
+</section>
+
+<section id="portfolio">
+    <h2>My Projects</h2>
+
+    <div class="project">
+        <h3>Tailor Website</h3>
+        <p>Website for Gadanga Stitches with receipt and measurement system.</p>
+    </div>
+
+    <div class="project">
+        <h3>E-commerce Website</h3>
+        <p>A simple online store with product display.</p>
+    </div>
+
+    <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>This personal portfolio project.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <form onsubmit="return validateForm()">
+        Name: <input type="text" id="name"><br>
+        Email: <input type="text" id="email"><br>
+        Message: <textarea id="message"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<script>
+// FORM VALIDATION
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    if (name.length < 3) {
+        alert("Name must be at least 3 characters");
+        return false;
+    }
+
+    if (email.indexOf('@') === -1) {
+        alert("Enter a valid email");
+        return false;
+    }
+
+    if (message === "") {
+        alert("Message cannot be empty");
+        return false;
+    }
+
+    alert("Message sent successfully!");
+    return true;
+}
+
+// DARK MODE (DOM manipulation - Week 10)
+function toggleMode() {
+    let body = document.getElementById("pageBody");
+    body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
